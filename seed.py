@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import Restaurant, Customer, Review, Base
+from model import Restaurant, Customer, Review, Base
 from faker import Faker
 
 # Replace 'your_database_url' with the actual URL of your database.
