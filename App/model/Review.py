@@ -10,8 +10,14 @@ class Review(Base):
     restaurant_id = Column(Integer, ForeignKey('restaurants.id'))
     customer_id = Column(Integer, ForeignKey('customers.id'))
 
-    restaurant = relationship('Restaurant', back_populates='reviews')
-    customer = relationship('Customer', back_populates='reviews')
+    restaurants = relationship('Restaurant', back_populates='reviews')
+    customers = relationship('Customer', back_populates='reviews')
 
     def __repr__(self):
         return f"<Review(id={self.id}, star_rating={self.star_rating}, restaurant_id={self.restaurant_id}, customer_id={self.customer_id})>"
+
+    def display_customer(self):
+        return self.customers
+
+    def display_restaurant(self):
+        return self.restaurants
